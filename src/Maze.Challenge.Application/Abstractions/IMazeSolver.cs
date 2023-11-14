@@ -2,6 +2,7 @@
 {
     public interface IMazeSolver
     {
+        string ImplementationName();
         Task Run();
     }
 }

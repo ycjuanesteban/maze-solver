@@ -28,4 +28,12 @@ This algorithm test all the posible paths acting like a binary search tree and c
 ### Problems and future solutions
 After iterate many times, the current logic has a problem because the api save the status each time that you make a movement, that is, every time the game is being updated with the newest current position and when the recursion return to a old node to start the new path this can't be execute because that status doesn't exist anymore. 
 
-A possible solution is the wall follower algorithm.
+## Algorithms used
+
+After search in many sources, the firts place that you will find in [wikipedia](https://en.wikipedia.org/wiki/Maze-solving_algorithm). That information is the principal approach to start the deep search of the information and algorithms.
+
+At the end, I found the book [Mazes for Programmers](https://www.amazon.es/Mazes-Programmers-Twisty-Little-Passages/dp/1680500554) that help me to understand what was the problem when I implement the initial algorithm.
+
+All the next iterations and commits will try to implement a different algorithm and use the `strategy` pattern like the way choose the one that you can try.
+
+* The Recursive Backtracker Algorithm (book chaper 5).

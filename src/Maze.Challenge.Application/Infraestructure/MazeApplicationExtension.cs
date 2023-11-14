@@ -1,4 +1,5 @@
 ﻿using Maze.Challenge.Application.Abstractions;
+using Maze.Challenge.Application.Strategies;
 using Maze.Challenge.Client.Infraestructure;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -22,7 +23,8 @@ namespace Maze.Challenge.Application.Infraestructure
                 });
 
             services.AddMazeClient(configuration)
-                .AddTransient<IMazeSolver, MazeSolver>();
+                .AddTransient<IMazeSolver, RecursiveBacktrackingSolver>()
+                .AddTransient<IMazeSolver, RecursiveSolver>();
 
             return services;
         }
