@@ -23,7 +23,10 @@ namespace Maze.Challenge.ConsoleApp
               })
               .Build();
 
-            var resolver = _host.Services.GetRequiredService<IMazeSolver>();
+            var resolver = _host.Services
+                .GetServices<IMazeSolver>()
+                .Where(x => x.ImplementationName() == nameof(RecursiveBacktrackingSolver))
+                .First();
 
             resolver.Run().Wait();
         }
